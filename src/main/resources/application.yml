@@ -3,5 +3,11 @@ server:
 spring:
   application:
     name: microservices-config-server
-  profiles:
-    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/brunomarques-br/springcloud-config-server
+          default-label: main
+          search-paths:
+            - 'greeting-service*'
